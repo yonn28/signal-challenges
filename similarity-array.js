@@ -6,7 +6,6 @@ function areSimilar(a, b) {
     let d = []
     a.map((value,idx)=>{
         if(value != b[idx]){
-            console.log(b[idx]);
             c.push(value);
             d.push(b[idx]);
         }
