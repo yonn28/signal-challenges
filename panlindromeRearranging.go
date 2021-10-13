@@ -17,17 +17,17 @@ func getCount( a string ) map[rune]int{
 }
 
 func palindromeRearranging(inputString string) bool {
-	secondEven := true
-	countEven := 0
+	secondOdd := true
+	countOdd := 0
 	for _, v := range getCount(inputString) {
-		if ( v % 2 == 1 && secondEven ) {
-			if(countEven == 1) {
-				secondEven = false
+		if ( v % 2 == 1 && secondOdd ) {
+			if(countOdd == 1) {
+				secondOdd = false
 			}
-			countEven++
+			countOdd++
 		}
 	}
-	return secondEven
+	return secondOdd
 }
 
 
