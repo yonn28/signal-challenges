@@ -1,31 +1,30 @@
 package main
 
 import (
-  "fmt"
-  "math"
+	"fmt"
+	"math"
 )
 
-func makeSum(arr [][]int, row int, col int) int { 
+func makeSum(arr [][]int, row int, col int) int {
 	var sum int = 0
-	for i:=row-1; i< row+2; i++ {
-		for j:= col-1; j < col+2; j++ {
+	for i := row - 1; i < row+2; i++ {
+		for j := col - 1; j < col+2; j++ {
 			sum = sum + arr[i][j]
 		}
 	}
-	return int(math.Floor(float64(sum/9))) 
+	return int(math.Floor(float64(sum / 9)))
 }
 
 func boxBlur(image [][]int) [][]int {
 	result := make([][]int, len(image)-2)
-    for i:= 1 ; i < len(image)-1 ; i++ {
+	for i := 1; i < len(image)-1; i++ {
 		result[i-1] = make([]int, len(image[i-1])-2)
-		for j:= 1 ; j < len(image[i])-1 ; j++ {
-			result[i-1][j-1] = makeSum(image,i,j)
+		for j := 1; j < len(image[i])-1; j++ {
+			result[i-1][j-1] = makeSum(image, i, j)
 		}
 	}
 	return result
 }
-
 
 func main() {
 

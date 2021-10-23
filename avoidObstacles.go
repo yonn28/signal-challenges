@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 
-func isDivisible(inputArray []int, divisor int) bool { 
+func isDivisible(inputArray []int, divisor int) bool {
 	for i := 0; i < len(inputArray); i++ {
-		if inputArray[i] % divisor == 0 {
+		if inputArray[i]%divisor == 0 {
 			return false
 		}
 	}
@@ -22,7 +22,6 @@ func avoidObstacles(inputArray []int) int {
 	}
 	return stepInit
 }
-
 
 func main() {
 	fmt.Println(avoidObstacles([]int{19, 32, 11, 23}))

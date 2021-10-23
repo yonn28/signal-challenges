@@ -2,17 +2,17 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 func isIPv4Address(inputString string) bool {
-  
+
 	result := strings.Split(inputString, ".")
 	for _, v := range result {
 		start_with_zero := strings.HasPrefix(v, "0")
 		transform, err := strconv.Atoi(v)
-		if ( transform > 255 || len(result) != 4 || err != nil || (start_with_zero && v != "0") ) {
+		if transform > 255 || len(result) != 4 || err != nil || (start_with_zero && v != "0") {
 
 			return false
 		}
